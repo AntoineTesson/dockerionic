@@ -22,7 +22,7 @@ RUN curl -o sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-lin
 RUN unzip sdk-tools.zip -d android
 
 RUN sdkmanager --update
-RUN yes | sdkmanager "build-tools;26.0.2"
+RUN yes | sdkmanager "build-tools;25.3.3"
 RUN yes | sdkmanager "platforms;android-26"
 RUN sdkmanager "tools"
 
