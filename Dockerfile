@@ -18,12 +18,12 @@ RUN apt-get install -y oracle-java8-installer
 
 WORKDIR /var/opt
 
-RUN curl -o sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+RUN curl -o sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 RUN unzip sdk-tools.zip -d android
 
 RUN sdkmanager --update
-RUN yes | sdkmanager "build-tools;26.0.2"
-RUN yes | sdkmanager "platforms;android-26"
+RUN yes | sdkmanager "build-tools;28.0.3"
+RUN yes | sdkmanager "platforms;android-28"
 RUN sdkmanager "tools"
 
 RUN curl -o gradle-4.1-all.zip https://downloads.gradle.org/distributions/gradle-4.1-all.zip
