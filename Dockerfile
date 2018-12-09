@@ -27,7 +27,7 @@ RUN yes | sdkmanager "platforms;android-26"
 RUN sdkmanager "tools"
 
 
-RUN curl -o gradle-4.1-all.zip https://services.gradle.org/distributions/gradle-4.1-all.zip
+RUN curl -o gradle-4.1-all.zip https://downloads.gradle.org/distributions/gradle-4.1-all.zip
 RUN unzip gradle-4.1-all.zip -d gradle
 RUN mv gradle/gradle-4.1 gradle/4.1
 
