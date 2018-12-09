@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 ENV ANDROID_HOME="/var/opt/android"
-ENV PATH="/var/opt/gradle/4.1/bin:/var/opt/android/tools:/var/opt/android/tools/bin:/var/opt/android/platform-tools:/var/opt/android/platform-tools/bin:${PATH}"
+ENV PATH="/var/opt/gradle/4.6/bin:/var/opt/android/tools:/var/opt/android/tools/bin:/var/opt/android/platform-tools:/var/opt/android/platform-tools/bin:${PATH}"
 
 RUN apt-get update
 
@@ -22,13 +22,13 @@ RUN curl -o sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-lin
 RUN unzip sdk-tools.zip -d android
 
 RUN sdkmanager --update
-RUN yes | sdkmanager "build-tools;25.3.3"
+RUN yes | sdkmanager "build-tools;28.0.3"
 RUN yes | sdkmanager "platforms;android-26"
 RUN sdkmanager "tools"
 
 
-RUN curl -o gradle-4.1-all.zip https://downloads.gradle.org/distributions/gradle-4.1-all.zip
-RUN unzip gradle-4.1-all.zip -d gradle
-RUN mv gradle/gradle-4.1 gradle/4.1
+RUN curl -o gradle-4.6-all.zip https://services.gradle.org/distributions/gradle-4.6-all.zip
+RUN unzip gradle-4.6-all.zip -d gradle
+RUN mv gradle/gradle-4.6 gradle/4.6
 
 WORKDIR /root
