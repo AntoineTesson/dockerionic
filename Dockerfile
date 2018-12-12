@@ -32,6 +32,6 @@ RUN curl -o gradle-4.1-all.zip https://downloads.gradle.org/distributions/gradle
 RUN unzip gradle-4.1-all.zip -d gradle
 RUN mv gradle/gradle-4.1 gradle/4.1
 
-export PATH=$PATH:var/opt/android-sdk-linux/platform-tools/
+RUN export PATH=$PATH:var/opt/android-sdk-linux/platform-tools/
 
 WORKDIR /root
