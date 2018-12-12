@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-ENV ANDROID_HOME="/var/opt/android"
+ENV ANDROID_HOME="/var/opt/android-sdk-linux"
 ENV PATH="/var/opt/gradle/4.1/bin:/var/opt/android/tools:/var/opt/android/tools/bin:/var/opt/android/platform-tools:/var/opt/android/platform-tools/bin:${PATH}"
 
 
@@ -32,7 +32,6 @@ RUN curl -o gradle-4.1-all.zip https://downloads.gradle.org/distributions/gradle
 RUN unzip gradle-4.1-all.zip -d gradle
 RUN mv gradle/gradle-4.1 gradle/4.1
 
-RUN export ANDROID_HOME=$PWD/android-sdk-linux
-RUN export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
+export PATH=$PATH:var/opt/android-sdk-linux/platform-tools/
 
 WORKDIR /root
