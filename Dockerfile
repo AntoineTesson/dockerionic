@@ -12,10 +12,11 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g cordova ionic
 
-RUN add-apt-repository ppa:webupd8team/java -y
+#RUN add-apt-repository ppa:webupd8team/java -y
+RUN  add-apt-repository ppa:linuxuprising/java
 RUN apt-get update
-RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
-RUN apt-get install -y oracle-java8-installer
+RUN echo "oracle-java10-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+RUN apt-get install -y oracle-java10-installer
 
 WORKDIR /var/opt
 
