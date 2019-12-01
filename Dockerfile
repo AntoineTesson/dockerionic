@@ -15,8 +15,10 @@ RUN npm install -g cordova ionic
 #RUN add-apt-repository ppa:webupd8team/java -y
 RUN  add-apt-repository ppa:linuxuprising/java
 RUN apt-get update
-RUN echo "oracle-java10-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
-RUN apt-get install -y oracle-java10-installer
+RUN echo "oracle-java13-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+RUN apt-get install oracle-java13-installer
+
+
 
 WORKDIR /var/opt
 
