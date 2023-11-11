@@ -8,8 +8,15 @@ RUN apt-get update
 
 RUN apt-get install -y curl git software-properties-common unzip
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get install -y nodejs
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+
+RUN export NVM_DIR=$HOME/.nvm;
+RUN source $NVM_DIR/nvm.sh;
+RUN nvm install v16
+RUN nvm use v16
+#RUN apt-get install -y nodejs
 RUN npm install -g cordova ionic
 
 #RUN add-apt-repository ppa:webupd8team/java -y
